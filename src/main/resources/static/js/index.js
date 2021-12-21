@@ -38,8 +38,8 @@ $(document).ready(function() {
                     '   </tr>';
                 $('#table').append(html);
             },
-            error: function () {
-                alert('error saving consultation')
+            error: function (jqXHR) {
+                alert('error saving consultation ' + jqXHR.responseJSON.message)
             }
         })
     });
@@ -49,17 +49,14 @@ $(document).ready(function() {
         
         const id = $("#deleteId").val();
 
-        console.log('id')
-        console.log(id)
-
         $.ajax({
             type: 'DELETE',
             url: 'http://localhost:8080/api/v1/consultations/' + id,
             success: function () {
                 location.reload()
             },
-            error: function () {
-                alert('error deleting consultation')
+            error: function (jqXHR) {
+                alert('error deleting consultation: ' + jqXHR.responseJSON.message)
             }
         })
     })

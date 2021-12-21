@@ -7,8 +7,8 @@ import org.springframework.boot.runApplication
 class SocialServiceDevApplication
 
 // TODO:
-// 1. Validation
-// 2. Error handler
+// 1. Validation +/-
+// 2. Error handler +/-
 // 3. Css
 
 fun main(args: Array<String>) {
